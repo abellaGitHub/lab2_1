@@ -52,4 +52,26 @@ public class BinarySearchTest {
         assertTrue(result.isFound());
         assertEquals(result.getPosition(), 6);
     }
+
+    @Test
+    public void isMiddleElement() throws Exception {
+
+        int[] seq = new int[]{2, 3, 5, 11, 13, 17, 20};
+
+        SearchResult result = BinarySearch.search(11, seq);
+
+        assertTrue(result.isFound());
+        assertEquals(result.getPosition(), 4);
+    }
+
+    @Test
+    public void isNotInSequence() throws Exception {
+
+        int[] seq = new int[]{2, 3, 5, 11, 13, 17, 20};
+
+        SearchResult result = BinarySearch.search(15, seq);
+
+        assertFalse(result.isFound());
+        assertEquals(result.getPosition(), -1);
+    }
 }
