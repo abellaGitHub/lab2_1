@@ -16,4 +16,13 @@ public class TestTask2_1 {
         SearchResult searchResult = BinarySearch.search(key, seq);
         assertTrue(searchResult.isFound() == true && searchResult.getPosition() == position);
     }
+
+    @org.junit.Test
+    public void elementNotPresentInOneCharacterSequence() {
+        int key = 10;
+        int[] seq = {20};
+
+        SearchResult result = BinarySearch.search(key, seq);
+        assertTrue(result.isFound() == false && result.getPosition() == -1);
+    }
 }
