@@ -35,4 +35,14 @@ public class TestTask2_1 {
         SearchResult searchResult = BinarySearch.search(key, seq);
         assertTrue(searchResult.isFound() == true && searchResult.getPosition() == position);
     }
+
+    @org.junit.Test
+    public void elementPresentAtLastPositionInLongSequence() {
+        int key = 20;
+        int[] seq = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+        int position = 11;
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        assertTrue(searchResult.isFound() == true && searchResult.getPosition() == position);
+    }
 }
