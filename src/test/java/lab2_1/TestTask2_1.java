@@ -55,4 +55,13 @@ public class TestTask2_1 {
         SearchResult searchResult = BinarySearch.search(key, seq);
         assertTrue(searchResult.isFound() == true && searchResult.getPosition() == position);
     }
+
+    @org.junit.Test
+    public void elementNotPresentnInLongSequence() {
+        int key = 22;
+        int[] seq = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+
+        SearchResult searchResult = BinarySearch.search(key, seq);
+        assertTrue(searchResult.isFound() == false && searchResult.getPosition() == -1);
+    }
 }
