@@ -64,4 +64,20 @@ public class TestTask2_1 {
         SearchResult searchResult = BinarySearch.search(key, seq);
         assertTrue(searchResult.isFound() == false && searchResult.getPosition() == -1);
     }
+
+    @org.junit.Test
+    public void emptySequence() {
+        int key = 22;
+        int[] seq = {};
+        boolean exceptionBool = false;
+
+        try {
+            SearchResult searchResult = BinarySearch.search(key, seq);
+        } catch (IllegalArgumentException e) {
+            exceptionBool = true;
+        }
+
+        assertTrue(exceptionBool);
+
+    }
 }
