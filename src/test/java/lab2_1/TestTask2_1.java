@@ -11,14 +11,17 @@ public class TestTask2_1 {
 
     boolean testResult = false;
     final int[] longSeq = {10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+    SearchResult searchResult;
+    int key;
+    int position;
 
     @org.junit.Test
     public void elementPresentInOneCharacterSequence() {
-        int key = 10;
+        key = 10;
         int[] seq = {10};
-        int position = 1;
+        position = 1;
 
-        SearchResult searchResult = BinarySearch.search(key, seq);
+        searchResult = BinarySearch.search(key, seq);
         testResult = searchResult.isFound() == true && searchResult.getPosition() == position;
         assertThat(testResult, Matchers.is(true));
     }
@@ -26,65 +29,77 @@ public class TestTask2_1 {
     @org.junit.Test
     public void elementNotPresentInOneCharacterSequence() {
 
-        int key = 10;
+        key = 10;
         int[] seq = {20};
 
-        SearchResult searchResult = BinarySearch.search(key, seq);
+        searchResult = BinarySearch.search(key, seq);
         testResult = searchResult.isFound() == false && searchResult.getPosition() == -1;
         assertThat(testResult, Matchers.is(true));
     }
 
     @org.junit.Test
     public void elementPresentAtFirstPositionInLongSequence() {
-        int key = 10;
-        int position = 1;
+        key = 10;
+        position = 1;
 
-        SearchResult searchResult = BinarySearch.search(key, longSeq);
+        searchResult = BinarySearch.search(key, longSeq);
         testResult = searchResult.isFound() == true && searchResult.getPosition() == position;
         assertThat(testResult, Matchers.is(true));
     }
 
     @org.junit.Test
     public void elementPresentAtLastPositionInLongSequence() {
-        int key = 20;
-        int position = 11;
+        key = 20;
+        position = 11;
 
-        SearchResult searchResult = BinarySearch.search(key, longSeq);
+        searchResult = BinarySearch.search(key, longSeq);
         testResult = searchResult.isFound() == true && searchResult.getPosition() == position;
         assertThat(testResult, Matchers.is(true));
     }
 
     @org.junit.Test
     public void elementPresentAtMiddlePositionInLongSequence() {
-        int key = 15;
-        int position = 6;
+        key = 15;
+        position = 6;
 
-        SearchResult searchResult = BinarySearch.search(key, longSeq);
+        searchResult = BinarySearch.search(key, longSeq);
         testResult = searchResult.isFound() == true && searchResult.getPosition() == position;
         assertThat(testResult, Matchers.is(true));
     }
 
     @org.junit.Test
     public void elementNotPresentnInLongSequence() {
-        int key = 22;
+        key = 22;
 
-        SearchResult searchResult = BinarySearch.search(key, longSeq);
+        searchResult = BinarySearch.search(key, longSeq);
         testResult = searchResult.isFound() == false && searchResult.getPosition() == -1;
         assertThat(testResult, Matchers.is(true));
     }
 
     @org.junit.Test
     public void emptySequence() {
-        int key = 22;
+        key = 22;
         int[] emptySeq = {};
 
         try {
-            SearchResult searchResult = BinarySearch.search(key, emptySeq);
+            searchResult = BinarySearch.search(key, emptySeq);
         } catch (IllegalArgumentException e) {
             testResult = true;
         }
 
         assertThat(testResult, Matchers.is(true));
 
+    }
+
+    @org.junit.Test
+    public void elementPresentAtMiddlePositionInOddSequence() {
+        int key = 12;
+        int[] oddSeq = {10, 11, 12, 13, 14, 15};
+        int position = 3;
+
+        searchResult = BinarySearch.search(key, oddSeq);
+        testResult = searchResult.isFound() == true && searchResult.getPosition() == position;
+        assertThat(testResult, Matchers.is(true));
+        assertThat(searchResult.getPosition(), Matchers.is((oddSeq.length - 1) / 2 + 1));
     }
 }
