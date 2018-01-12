@@ -84,4 +84,15 @@ public class BinarySearchTest {
 
         BinarySearch.search(15, seq);
     }
+
+    @Test
+    public void isNotInTheMiddle() throws Exception {
+
+        int[] seq = new int[]{2, 3, 5, 11, 13, 17, 20};
+
+        SearchResult result = BinarySearch.search(17, seq);
+
+        assertTrue(result.isFound());
+        assertEquals(result.getPosition(), 6);
+    }
 }
