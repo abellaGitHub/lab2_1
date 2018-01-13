@@ -94,4 +94,16 @@ public class Tests {
         assertTrue(res.isFound());
         assertEquals(res.getPosition(), position);
     }
+
+    @Test
+    public void elementSearchedIsNotInMultiElementSequence() {
+        int key = 6;
+        int[] seq = {0, 1, 2, 3, 4, 5};
+        int position = -1;
+
+        SearchResult res = BinarySearch.search(key, seq);
+
+        assertFalse(res.isFound());
+        assertEquals(res.getPosition(), position);
+    }
 }
