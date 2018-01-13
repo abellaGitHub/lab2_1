@@ -34,4 +34,16 @@ public class Tests {
         assertFalse(res.isFound());
         assertEquals(res.getPosition(), position);
     }
+
+    @Test
+    public void elementSearchedIsFirstElementInSequence() {
+        int key = 0;
+        int[] seq = {0, 1, 2, 3, 4};
+        int position = 1;
+
+        SearchResult res = BinarySearch.search(key, seq);
+
+        assertTrue(res.isFound());
+        assertEquals(res.getPosition(), position);
+    }
 }
