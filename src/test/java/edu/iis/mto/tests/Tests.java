@@ -58,4 +58,40 @@ public class Tests {
         assertTrue(res.isFound());
         assertEquals(res.getPosition(), position);
     }
+
+    @Test
+    public void elementSearchedIsMiddleElementInSequence() {
+        int key = 2;
+        int[] seq = {0, 1, 2, 3, 4};
+        int position = 3;
+
+        SearchResult res = BinarySearch.search(key, seq);
+
+        assertTrue(res.isFound());
+        assertEquals(res.getPosition(), position);
+    }
+
+    @Test
+    public void elementSearchedIsMiddlePlusOneElementInSequence() {
+        int key = 3;
+        int[] seq = {0, 1, 2, 3, 4, 5};
+        int position = 4;
+
+        SearchResult res = BinarySearch.search(key, seq);
+
+        assertTrue(res.isFound());
+        assertEquals(res.getPosition(), position);
+    }
+
+    @Test
+    public void elementSearchedIsMiddleMinusOneElementInSequence() {
+        int key = 2;
+        int[] seq = {0, 1, 2, 3, 4, 5};
+        int position = 3;
+
+        SearchResult res = BinarySearch.search(key, seq);
+
+        assertTrue(res.isFound());
+        assertEquals(res.getPosition(), position);
+    }
 }
