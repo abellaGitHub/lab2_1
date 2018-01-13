@@ -95,4 +95,26 @@ public class BinarySearchTest {
         assertTrue(result.isFound());
         assertEquals(result.getPosition(), 6);
     }
+
+    @Test
+    public void isInTheMiddlePlusOne() throws Exception {
+
+        int[] seq = new int[]{2, 3, 5, 11, 13, 17, 20};
+
+        SearchResult result = BinarySearch.search(13, seq);
+
+        assertTrue(result.isFound());
+        assertEquals(result.getPosition(), 5);
+    }
+
+    @Test
+    public void isInTheMiddleMinusOne() throws Exception {
+
+        int[] seq = new int[]{2, 3, 5, 11, 13, 17, 20};
+
+        SearchResult result = BinarySearch.search(5, seq);
+
+        assertTrue(result.isFound());
+        assertEquals(result.getPosition(), 3);
+    }
 }
