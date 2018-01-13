@@ -46,4 +46,16 @@ public class Tests {
         assertTrue(res.isFound());
         assertEquals(res.getPosition(), position);
     }
+
+    @Test
+    public void elementSearchedIsLastElementInSequence() {
+        int key = 4;
+        int[] seq = {0, 1, 2, 3, 4};
+        int position = 5;
+
+        SearchResult res = BinarySearch.search(key, seq);
+
+        assertTrue(res.isFound());
+        assertEquals(res.getPosition(), position);
+    }
 }
