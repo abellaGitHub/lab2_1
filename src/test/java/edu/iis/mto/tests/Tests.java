@@ -1,9 +1,8 @@
 package edu.iis.mto.tests;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertThat;
 
+import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import edu.iis.mto.bsearch.BinarySearch;
@@ -19,8 +18,7 @@ public class Tests {
 
         SearchResult res = BinarySearch.search(key, seq);
 
-        assertTrue(res.isFound());
-        assertEquals(res.getPosition(), position);
+        assertThat(res.isFound() == true && res.getPosition() == position, Matchers.is(true));
     }
 
     @Test
@@ -31,8 +29,7 @@ public class Tests {
 
         SearchResult res = BinarySearch.search(key, seq);
 
-        assertFalse(res.isFound());
-        assertEquals(res.getPosition(), position);
+        assertThat(res.isFound() == false && res.getPosition() == position, Matchers.is(true));
     }
 
     @Test
@@ -43,8 +40,7 @@ public class Tests {
 
         SearchResult res = BinarySearch.search(key, seq);
 
-        assertTrue(res.isFound());
-        assertEquals(res.getPosition(), position);
+        assertThat(res.isFound() == true && res.getPosition() == position, Matchers.is(true));
     }
 
     @Test
@@ -55,8 +51,7 @@ public class Tests {
 
         SearchResult res = BinarySearch.search(key, seq);
 
-        assertTrue(res.isFound());
-        assertEquals(res.getPosition(), position);
+        assertThat(res.isFound() == true && res.getPosition() == position, Matchers.is(true));
     }
 
     @Test
@@ -67,8 +62,7 @@ public class Tests {
 
         SearchResult res = BinarySearch.search(key, seq);
 
-        assertTrue(res.isFound());
-        assertEquals(res.getPosition(), position);
+        assertThat(res.isFound() == true && res.getPosition() == position, Matchers.is(true));
     }
 
     @Test
@@ -79,8 +73,7 @@ public class Tests {
 
         SearchResult res = BinarySearch.search(key, seq);
 
-        assertTrue(res.isFound());
-        assertEquals(res.getPosition(), position);
+        assertThat(res.isFound() == true && res.getPosition() == position, Matchers.is(true));
     }
 
     @Test
@@ -91,8 +84,7 @@ public class Tests {
 
         SearchResult res = BinarySearch.search(key, seq);
 
-        assertTrue(res.isFound());
-        assertEquals(res.getPosition(), position);
+        assertThat(res.isFound() == true && res.getPosition() == position, Matchers.is(true));
     }
 
     @Test
@@ -103,8 +95,7 @@ public class Tests {
 
         SearchResult res = BinarySearch.search(key, seq);
 
-        assertFalse(res.isFound());
-        assertEquals(res.getPosition(), position);
+        assertThat(res.isFound() == false && res.getPosition() == position, Matchers.is(true));
     }
 
     @Test
@@ -115,7 +106,6 @@ public class Tests {
 
         SearchResult res = BinarySearch.search(key, seq);
 
-        assertFalse(res.isFound());
-        assertEquals(res.getPosition(), position);
+        assertThat(res.isFound() == false && res.getPosition() == position, Matchers.is(true));
     }
 }
