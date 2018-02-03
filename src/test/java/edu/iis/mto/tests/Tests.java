@@ -106,4 +106,16 @@ public class Tests {
         assertFalse(res.isFound());
         assertEquals(res.getPosition(), position);
     }
+
+    @Test
+    public void sequenceIsEmpty() {
+        int key = 5;
+        int[] seq = {};
+        int position = -1;
+
+        SearchResult res = BinarySearch.search(key, seq);
+
+        assertFalse(res.isFound());
+        assertEquals(res.getPosition(), position);
+    }
 }
